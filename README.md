@@ -7,17 +7,21 @@ The Viratualization Concept was first developed in the 1960s to partition large,
 
 1. ### **What Is Virtualization?**
 
+![Virutal Machine](/imgs/what-is-a-virtualization-techology.png)
+
 Virtualization is software that creates an abstraction layer over computer hardware, allowing the hardware elements of a single computer to be divided into multiple virtual computers, commonly called virtual machines (VMs). Virtualization makes a single physical machine act like multiple, saving the cost of more servers and workstations. Cloud computing is a service that delivers shared computing resources and is powered by virtualization technology.
 
-2. ### **What Are The Problems The Virtualization Comes To Solve?**
+1. ### **What Are The Problems The Virtualization Comes To Solve?**
 
 Virtualization comes to solve several problems, including cost savings, improved efficiency, less downtime, and scalability. It eliminates costs for IT rooms, cables, and hardware. Virtualization also allows IT managers to make changes in one part of a computer system without affecting other parts. However, virtualization can also cause some problems such as VM sprawl, network congestion, server hardware failures, reduced VM performance and security issues.
 
-4. ### **How Does Virtualization Work?**
+1. ### **How Does Virtualization Work?**
+
+![Virutal Machine](/imgs/virutalization.png)
 
 Virtualization works by using software to simulate hardware functionality and create a virtual computer system. It enables the hardware resources of a single computer to be divided into multiple virtual computers, called virtual machines (VMs). Virtualization allows IT organizations to run more than one virtual system, multiple operating systems, and applications on a single server. This results in economies of scale and greater efficiency. Virtualization is the process of running a virtual instance of a computer system in a layer separate from the actual hardware. It creates useful IT services using resources that are traditionally bound to hardware.
 
-5. ### **What's Virutal Machine?**
+1. ### **What's Virutal Machine?**
 
 A Virtual Machine is a compute resource that uses software instead of a physical computer to run programs and deploy apps. It is a virtual environment that functions as a virtual computer system with its own CPU, memory, network interface, and storage. A VM is a digital version of a physical computer that can run programs and operating systems, store data, connect to networks, and more.
 
