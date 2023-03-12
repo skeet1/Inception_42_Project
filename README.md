@@ -1,15 +1,62 @@
 # **INCEPTION 42 PROJECT**
 
-## **DOCKER AND KUBERNETES**
+## **A - Virutalization**
+1. ### **History Of The Virtualization Concept**
 
-### **Virtual Machine And The Virtualization Concept.**
+The Viratualization Concept was first developed in the 1960s to partition large, mainframe hardware for better hardware utilization, In the early 2000s, VMware introduced its product for x86 servers called ESX Server, and Microsoft acquired virtualization technologies (Virtual PC and an unreleased product) in 2003. The technologies that enabled virtualization were widely adopted in the early 2000s.
 
-The **Viratualization** Concept was first developed in the **1960s** to partition large, mainframe hardware for better hardware utilization, In the early 2000s, VMware introduced its product for x86 servers called ESX Server, and Microsoft acquired virtualization technologies (Virtual PC and an unreleased product) in 2003. The technologies that enabled virtualization were widely adopted in the early 2000s.
-
-### **What Is Virtualization**
+1. ### **What Is Virtualization?**
 
 Virtualization is software that creates an abstraction layer over computer hardware, allowing the hardware elements of a single computer to be divided into multiple virtual computers, commonly called virtual machines (VMs). Virtualization makes a single physical machine act like multiple, saving the cost of more servers and workstations. Cloud computing is a service that delivers shared computing resources and is powered by virtualization technology.
 
-### **What Are The Problems The Virtualization Comes To Solve?**
+2. ### **What Are The Problems The Virtualization Comes To Solve?**
 
 Virtualization comes to solve several problems, including cost savings, improved efficiency, less downtime, and scalability. It eliminates costs for IT rooms, cables, and hardware. Virtualization also allows IT managers to make changes in one part of a computer system without affecting other parts. However, virtualization can also cause some problems such as VM sprawl, network congestion, server hardware failures, reduced VM performance and security issues.
+
+4. ### **How Does Virtualization Work?**
+
+Virtualization works by using software to simulate hardware functionality and create a virtual computer system. It enables the hardware resources of a single computer to be divided into multiple virtual computers, called virtual machines (VMs). Virtualization allows IT organizations to run more than one virtual system, multiple operating systems, and applications on a single server. This results in economies of scale and greater efficiency. Virtualization is the process of running a virtual instance of a computer system in a layer separate from the actual hardware. It creates useful IT services using resources that are traditionally bound to hardware.
+
+5. ### **What's Virutal Machine?**
+
+A Virtual Machine is a compute resource that uses software instead of a physical computer to run programs and deploy apps. It is a virtual environment that functions as a virtual computer system with its own CPU, memory, network interface, and storage. A VM is a digital version of a physical computer that can run programs and operating systems, store data, connect to networks, and more.
+
+6. ### **What Are The Problem Solved By VM?**
+
+Virtual machines (VMs) solve several problems, including:
+
+- Isolation: VMs allow running multiple independent operating systems on a single physical machine, each with its own isolated environment.
+
+- Resource allocation: VMs allow flexible allocation of hardware resources such as CPU, memory, and storage among different virtual machines.
+
+- Portability: VMs are independent of the underlying hardware and can be easily moved between physical machines.
+
+- Consolidation: VMs allow better utilization of hardware resources by consolidating multiple workloads onto fewer physical machines.
+
+- Testing and development: VMs are useful for testing and development as they allow creating an isolated environment that can be easily created, copied, and deleted.
+
+- Disaster recovery: VMs allow quick and easy recovery from hardware failures or disasters by easily moving VMs to different hardware.
+
+![Virutal Machine](/imgs/virtual-machine_overview-img.jpg)
+
+### **RESOURCES**
+- #### **BOOKS**
+
+- #### **ARTICLES**
+  - https://docs.oracle.com/cd/E50245_01/E50249/html/vmcon-intro-virt-history.html
+  - https://www.ibm.com/topics/virtualization
+  - https://www.vmware.com/solutions/virtualization.html
+  - https://azure.microsoft.com/en-au/resources/cloud-computing-dictionary/what-is-a-virtual-machine/
+- #### **VIDEOS**
+	- https://www.youtube.com/watch?v=PrusdhS2lmo
+
+
+
+
+
+
+
+
+
+
+
