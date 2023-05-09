@@ -1,5 +1,7 @@
 # **INCEPTION 42 PROJECT**
 
+## ** - Summary**
+
 ## **A - Virutalization**
 1. ### **History Of The Virtualization Concept**
 
