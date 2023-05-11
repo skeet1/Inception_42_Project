@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  nginx:
+    container_name: my-nginx-container
+    build: ./requirements/nginx/
+    image: my-nginx-image
+    ports:
+      - 443
+    
+  mariadb:
+    container_name: my-mariadb-container
+    build: ./requirements/mariadb/
+    image: my-mariadb-image
+    ports:
+      - 3306
+    
+  wordpress:
+    container_name: my-wordpress-container
+    build: ./requirements/wordpress/
+    image: my-wordpress-image
+    ports:
+      - 3306
