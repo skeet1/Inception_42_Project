@@ -71,15 +71,31 @@ Docker is composed of these five components:
   - Docker Container
   - Docker Registry
 
-#### **What is a Docker Daemon?**
+#### ***What is a Docker Daemon?***
 Docker has a client-server architecture. Docker Daemon (dockerd) or server is responsible for all the actions related to containers.
 
 The daemon receives the commands from the Docker client through CLI or REST API. Docker client can be on the same host as a daemon or present on any other host.
 
 By default, the docker daemon listens to the docker.sock UNIX socket. If you have any use case to access the docker API remotely, you need to expose it over a host port. One such use case is running Docker as Jenkins agents.
 
-#### **What is Docker Client?**
+#### ***What is Docker Client?***
 Docker client provides a command-line interface (CLI) that allows users to run, and stop application commands to a Docker daemon.
+
+
+#### ***What is Docker Image?***
+A Docker image is a lightweight, standalone, executable package that contains everything needed to run a piece of software. It is a snapshot of a Docker container, which includes the application code, runtime, system tools, libraries, and settings.
+
+A Docker image is built from a Dockerfile, which is a script that specifies the instructions for building the image. The Dockerfile typically includes a base image, which provides the underlying operating system and runtime environment, as well as additional instructions for installing and configuring software packages, copying files, setting environment variables, and exposing ports.
+
+#### ***What is Docker Container?***
+A Docker container is a lightweight and portable executable package that contains an application and all of its dependencies, libraries, and configuration files needed to run.
+
+A container is created from a Docker image, which is a snapshot of the application and environment at a specific point in time. When a container is started, it runs in its own isolated environment, separate from the host system and other containers. The container provides an efficient and consistent runtime environment that ensures the application runs the same way, regardless of where it is deployed.
+
+#### ***What is Docker Registry?***
+A Docker registry is a storage and distribution system for Docker images. It allows users to store and share Docker images with other users, either publicly or privately.
+
+Docker Hub is the default public registry for Docker images, providing a large collection of images that can be used as a base for building new images. Docker Hub also allows users to store their own Docker images in private repositories, which can be accessed by authorized users.
 
 ### **RESOURCES**
 
