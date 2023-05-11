@@ -1,17 +1,19 @@
 # **INCEPTION 42 PROJECT**
 
 ## **- Summary**
->> ## **1. Virtualization**
->>> ### **1. 1. History Of The Virtualization Concept**
->>> ### **1. 2. What Is Virtualization?**
->>> ### **1. 3. Problems The Virtualization Solves**
->>> ### **1. 4. How Does Virtualization Work?**
+> ## **1. Virtualization**
+>> ### **1. 1. History Of The Virtualization Concept**
+>> ### **1. 2. What Is Virtualization?**
+>> ### **1. 3. Problems The Virtualization Solves**
+>> ### **1. 4. How Does Virtualization Work?**
+>> ### **1. 5. What's Virutal Machine?**
+>> ### **1. 5. What Are The Problems Solved By VM?**
 
->> ## **2. Docker**
->>> ### **2. 1. What is Docker**
->>> ### **2. 2. Docker Components**
->>> ### **2. 3. How Docker works**
->>> ### **2. 4. Advantages of Docker**
+> ## **2. Docker**
+>> ### **2. 1. What is Docker**
+>> ### **2. 2. Docker Components**
+>> ### **2. 3. How Docker works**
+>> ### **2. 4. Advantages of Docker**
 
 ## **A - Virutalization**
 1. ### **History Of The Virtualization Concept**
@@ -38,7 +40,7 @@ Virtualization works by using software to simulate hardware functionality and cr
 
 A Virtual Machine is a compute resource that uses software instead of a physical computer to run programs and deploy apps. It is a virtual environment that functions as a virtual computer system with its own CPU, memory, network interface, and storage. A VM is a digital version of a physical computer that can run programs and operating systems, store data, connect to networks, and more.
 
-6. ### **What Are The Problem Solved By VM?**
+6. ### **What Are The Problems Solved By VM?**
 
 Virtual machines (VMs) solve several problems, including:
 
@@ -55,6 +57,29 @@ Virtual machines (VMs) solve several problems, including:
 - Disaster recovery: VMs allow quick and easy recovery from hardware failures or disasters by easily moving VMs to different hardware.
 
 ![Virutal Machine](./imgs/virtual-machine_overview-img.jpg)
+
+
+## **A - Docker**
+1. ### **What is Docker**
+Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your applications. By taking advantage of Docker’s methodologies for shipping, testing, and deploying code quickly, you can significantly reduce the delay between writing code and running it in production.
+
+2. ### **Docker Components**
+Docker is composed of these five components:
+  - Docker Daemon (dockerd)
+  - Docker Client
+  - Docker Image
+  - Docker Container
+  - Docker Registry
+
+#### **What is a Docker Daemon?**
+Docker has a client-server architecture. Docker Daemon (dockerd) or server is responsible for all the actions related to containers.
+
+The daemon receives the commands from the Docker client through CLI or REST API. Docker client can be on the same host as a daemon or present on any other host.
+
+By default, the docker daemon listens to the docker.sock UNIX socket. If you have any use case to access the docker API remotely, you need to expose it over a host port. One such use case is running Docker as Jenkins agents.
+
+#### **What is Docker Client?**
+Docker client provides a command-line interface (CLI) that allows users to run, and stop application commands to a Docker daemon.
 
 ### **RESOURCES**
 
