@@ -12,8 +12,10 @@
 > ## **2. Docker**
 >> ### **2. 1. What is Docker**
 >> ### **2. 2. Docker Components**
->> ### **2. 3. How Docker works**
->> ### **2. 4. Advantages of Docker**
+>> ### **2. 3. Dockerfile && Docker-compose**
+>> ### **2. 4. How Docker works**
+>> ### **2. 5. Docker Vs Virtual Machines**
+>> ### **2. 6. Advantages of Docker**
 
 ## **A - Virutalization**
 1. ### **History Of The Virtualization Concept**
@@ -96,6 +98,46 @@ A container is created from a Docker image, which is a snapshot of the applicati
 A Docker registry is a storage and distribution system for Docker images. It allows users to store and share Docker images with other users, either publicly or privately.
 
 Docker Hub is the default public registry for Docker images, providing a large collection of images that can be used as a base for building new images. Docker Hub also allows users to store their own Docker images in private repositories, which can be accessed by authorized users.
+
+3. ### **Dockerfile && Docker-compose**
+#### ***What is Dockerfile***
+A Dockerfile is a script that automatically creates containers on the Docker platform. A Dockerfile is basically a text document that contains all the commands a user could call on the command line to assemble an image. The Docker platform runs natively on Linux and allows developers to build and run containers, self-contained applications or systems with no dependencies on the underlying infrastructure. Built upon the resource-isolation features of the Linux kernel, Docker helps developers and system administrators port applications across different systems and machines by running them inside containers.
+
+#### ***What is Docker-compose***
+Docker Compose is a tool that was developed to help define and share multi-container applications. With Compose, we can create a YAML file to define the services and with a single command, can spin everything up or tear it all down.
+
+4. ### **How Docker Works**
+Here's a brief overview of how Docker works:
+
+Developers create a Dockerfile to define an application and its dependencies.
+The Dockerfile is used to build a Docker image, which is a packaged version of the application that can run on any system with Docker installed.
+The Docker image is stored in a registry, which can be public or private.
+Developers can use the Docker image to run a container, which is a lightweight, standalone, and executable package of software.
+The Docker container runs in an isolated environment, separate from the host system and other containers, but shares the kernel of the host operating system.
+Docker provides tools for managing containers, including starting, stopping, and deleting containers, as well as scaling and distributing applications across multiple hosts.
+Docker also provides a network layer that enables containers to communicate with each other and with external services, and a storage layer that allows containers to persist data.
+Overall, Docker provides a consistent and portable runtime environment for applications, making it easier to build, deploy, and manage applications at scale.
+
+5. ### **Docker Vs Virtual Machines**
+![Docker Vs VMs](./imgs/bb-bh-VMs-vs.webp)
+The main difference between virtual machines (VMs) and Docker is that VMs virtualize an entire operating system, including the kernel, whereas Docker virtualizes the application and its dependencies. This means that Docker containers are generally lighter-weight and faster to start up than VMs, since they don't have to boot an entire operating system. Additionally, Docker allows multiple containers to share the same kernel, which can lead to improved performance and resource utilization.
+
+5. ### **Advantages of Docker**
+Here are some advantages of Docker:
+
+**Portability**: Docker images are portable, meaning they can be run on any system that has Docker installed. This makes it easy to move applications between different environments, such as development, testing, and production.
+
+**Scalability**: Docker makes it easy to scale applications horizontally by running multiple instances of the same container across multiple hosts. This allows applications to handle increased traffic and demand.
+
+**Consistency**: Docker ensures consistency between development, testing, and production environments by using the same image in each environment. This reduces the risk of errors and improves application quality.
+
+**Isolation**: Docker containers run in an isolated environment, separate from the host system and other containers. This improves security and reduces the risk of conflicts between applications.
+
+**Efficiency**: Docker containers are lightweight and share the host operating system kernel, which makes them more efficient than traditional virtual machines.
+
+**Flexibility**: Docker can be used with a wide range of applications, programming languages, and frameworks. It also integrates with many other tools and technologies.
+
+Overall, Docker simplifies the process of building, deploying, and managing applications by providing a consistent and portable runtime environment that can run on any host system.
 
 ### **RESOURCES**
 
