@@ -6,7 +6,7 @@
 #    By: mkarim <mkarim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/09 06:40:10 by mkarim            #+#    #+#              #
-#    Updated: 2023/05/09 06:43:17 by mkarim           ###   ########.fr        #
+#    Updated: 2023/05/14 10:01:18 by mkarim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,4 +23,6 @@ all :
 	docker build -d mariadb-image $(MARIADB_PATH)
 	docker build -d wordpress-image $(WORDPRESS_PATH)
 
-
+clean:
+	docker rm -f $$(docker ps -qa)
+	docker rmi -f $$(docker images -qa)
