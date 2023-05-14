@@ -154,6 +154,7 @@ Overall, Docker simplifies the process of building, deploying, and managing appl
 
 >#### **Nginx**
   - https://nginx.org/en/docs/beginners_guide.html
+  - https://www.freecodecamp.org/news/the-nginx-handbook/
 
 >#### **WordPress**
 
