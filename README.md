@@ -63,7 +63,7 @@ Virtual machines (VMs) solve several problems, including:
 
 ## **B - Docker**
 1. ### **What is Docker**
-Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your applications. By taking advantage of Docker’s methodologies for shipping, testing, and deploying code quickly, you can significantly reduce the delay between writing code and running it in production.
+Docker is a software that can package your application, its dependencies, system tools, system libraries and settings in a single comprehensive virtual container. This combined package, which contains everything that’s needed to run your application, is called a Docker container image. This image is a standalone, executable software package which runs reliably on any server — Linux, Windows, macOS, public cloud or private cloud. Also, these images can be used to run the application as an isolated process in user space.
 
 2. ### **Docker Components**
 Docker is composed of these five components:
