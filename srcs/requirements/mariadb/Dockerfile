@@ -7,10 +7,9 @@ RUN apt-get update -y && \
 # Configure MariaDB to listen on all network interfaces
 RUN sed -i 's/bind-address.*/bind-address = 0.0.0.0/' /etc/mysql/mariadb.conf.d/50-server.cnf
 
-# Start MariaDB service
+# CREATE && CHMOD THE SCRIPT TO CONFIGURE DB
 COPY ./tools/script.sh .
 RUN chmod +x script.sh
-# Create a new database and user with privileges
 
 ENTRYPOINT  [ "./script.sh" ] 
 
