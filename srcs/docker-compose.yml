@@ -2,22 +2,24 @@ version: '3'
 
 services:
   nginx:
-    container_name: my-nginx-container
+    container_name: nginx_container
     build: ./requirements/nginx/
-    image: my-nginx-image
+    image: nginx_image
     ports:
       - 443
     
   mariadb:
-    container_name: my-mariadb-container
+    container_name: mariadb_container
     build: ./requirements/mariadb/
-    image: my-mariadb-image
+    image: mariadb_image
+    env_file:
+      - .env
     ports:
       - 3306
     
   wordpress:
-    container_name: my-wordpress-container
+    container_name: wordpress_container
     build: ./requirements/wordpress/
-    image: my-wordpress-image
+    image: wordpress_image
     ports:
       - 3306
