@@ -1,6 +1,6 @@
-FROM debian:latest
+FROM debian:buster
 
-RUN apt-get update && apt-get install -y nginx openssl
+RUN apt update && apt install -y vim nginx openssl
 
 # copy Nginx configuration file
 COPY conf/nginx.conf /etc/nginx/nginx.conf
@@ -13,6 +13,6 @@ RUN chmod +x install_tools.sh
 
 ENTRYPOINT ["./install_tools.sh"]
 
-EXPOSE 443 8080
+EXPOSE 443
 
 CMD ["nginx", "-g", "daemon off;"]
