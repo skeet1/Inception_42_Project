@@ -1,5 +1,7 @@
-FROM debian:latest
+FROM debian:buster
 
-# ENTRYPOINT ["echo", "Hello"]
+RUN apt update && apt install vim -y
+
+ENTRYPOINT [ "echo", "hello" ]
 
 CMD ["echo", "world"]

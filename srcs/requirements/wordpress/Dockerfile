@@ -1,27 +1,14 @@
-# Use the Debian Buster base image
 FROM debian:buster
 
-# Install dependencies
-RUN apt-get update && \
-    apt-get install -y \
-        php7.3-fpm \
-        php7.3-mysql \
-        php7.3-curl \
+RUN apt-get  update && apt-get  upgrade -y && apt-get  install curl -y\
+    && apt-get install -y php php-curl php-mysql && apt-get install -y php7.3-fpm
 
-# Set the working directory
-WORKDIR /var/www/html
+COPY /tools/script.sh .
 
-# Download and extract WordPress
-RUN wget -O wordpress.zip https://wordpress.org/latest.zip && \
-    unzip wordpress.zip && \
-    rm wordpress.zip && \
-    mv wordpress /var/www/html/
+RUN  chmod +x script.sh
 
-# Configure PHP-FPM
-RUN sed -i 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php/7.3/fpm/php.ini
+ENTRYPOINT  [ "./script.sh" ] 
 
-# Expose port 9000 for PHP-FPM
 EXPOSE 9000
 
-# Start PHP-FPM
 CMD ["php-fpm7.3", "-F"]
