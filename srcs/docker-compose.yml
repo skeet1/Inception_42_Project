@@ -6,12 +6,12 @@ services:
     build: ./requirements/nginx/
     image: nginx_image
     restart: always
-    # depends_on:
-        # - wordpress
+    depends_on:
+        - wordpress
     ports:
-      - "443:443"
-    # volumes:
-    #   - data_wp:/var/www/html/
+      - 443:443
+    volumes:
+      - data_wp:/var/www/html/
     # networks:
     #   - np
     
@@ -23,9 +23,9 @@ services:
     env_file:
       - .env
     ports:
-      - 3306
-    # volumes:
-    #     - mariadb_db:/var/lib/mysql/
+      - 3306:3306
+    volumes:
+        - mariadb_db:/var/lib/mysql/
     # networks:
     #     - np
 
@@ -35,26 +35,33 @@ services:
       - mariadb
     build: ./requirements/wordpress/
     image: wordpress_image
-    # restart: always
+    restart: always
     env_file:
       - .env
-#     volumes:
-#         - data_wp:/var/www/html/
+    ports:
+      - 9000:9000
+    volumes:
+        - data_wp:/var/www/html
 #     networks:
 #         - np
 
-# volumes:
-#   data_wp:
-#     driver_opts:
-#       type: none
-#       o: bind
-#       device: /Users/mkarim/Desktop/inception_volume/wordpress
-#   mariadb_db:
-#     driver_opts:
-#       type: none
-#       o: bind
-#       device: /Users/mkarim/Desktop/inception_volume/mariadb
+
+  # volumes:
+  #   maria_db:
+
+
+volumes:
+  data_wp:
+    driver_opts:
+      type: none
+      o: bind
+      device: /Users/mkarim/Desktop/inception_volume/wordpress
+  mariadb_db:
+    driver_opts:
+      type: none
+      o: bind
+      device: /Users/mkarim/Desktop/inception_volume/mariadb
 
 # networks:
 #   np: 
-#     driver: bridge  
+#     driver: bridge
