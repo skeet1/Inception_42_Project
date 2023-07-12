@@ -11,7 +11,7 @@ services:
     ports:
       - 443:443
     volumes:
-      - data_wp:/var/www/html/
+      - wordpress_vol:/var/www/html/
     # networks:
     #   - np
     
@@ -23,9 +23,9 @@ services:
     env_file:
       - .env
     ports:
-      - 3306:3306
+      - 3306
     volumes:
-        - mariadb_db:/var/lib/mysql/
+        - mariadb_vol:/var/lib/mysql/
     # networks:
     #     - np
 
@@ -39,28 +39,31 @@ services:
     env_file:
       - .env
     ports:
-      - 9000:9000
+      - 9000
     volumes:
-        - data_wp:/var/www/html
-#     networks:
-#         - np
+        - wordpress_vol:/var/www/html
+
+  static_website:
+    container_name: static_website
+    build: ./requirements/bonus/static_website/
+    image: static_website_image
+    ports:
+      - 8080:8080
 
 
-  # volumes:
-  #   maria_db:
 
 
 volumes:
-  data_wp:
+  wordpress_vol:
     driver_opts:
       type: none
       o: bind
-      device: /Users/mkarim/Desktop/inception_volume/wordpress
-  mariadb_db:
+      device: /Users/mkarim/Desktop/inception_volumes/wordpress_vol
+  mariadb_vol:
     driver_opts:
       type: none
       o: bind
-      device: /Users/mkarim/Desktop/inception_volume/mariadb
+      device: /Users/mkarim/Desktop/inception_volumes/mariadb_vol
 
 # networks:
 #   np: 
