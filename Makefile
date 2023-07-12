@@ -6,23 +6,40 @@
 #    By: mkarim <mkarim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/09 06:40:10 by mkarim            #+#    #+#              #
-#    Updated: 2023/05/14 10:01:18 by mkarim           ###   ########.fr        #
+#    Updated: 2023/07/12 16:54:26 by mkarim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = inception
 
-NGINX_PATH = ./src/requirements/nginx
+up:
+	@mkdir -p /Users/mkarim/Desktop/inception_volumes
+	@mkdir -p /Users/mkarim/Desktop/inception_volumes/mariadb_vol
+	@mkdir -p /Users/mkarim/Desktop/inception_volumes/wordpress_vol
+	@docker-compose -f ./srcs/docker-compose.yml up --build -d
+	@echo "\033[1m\033[32mAll Containers Builded Successfully!"
 
-MARIADB_PATH = ./src/requirements/mariadb
-
-WORDPRESS_PATH = ./src/requirements/wordpress
-
-all :
-	docker build -d nginx-image $(NGINX_PATH)
-	docker build -d mariadb-image $(MARIADB_PATH)
-	docker build -d wordpress-image $(WORDPRESS_PATH)
+down:
+	@docker-compose -f ./srcs/docker-compose.yml down -v
+	@echo "\033[1m\033[31mAll Containers Downed Successfully!"
 
 clean:
-	docker rm -f $$(docker ps -qa)
-	docker rmi -f $$(docker images -qa)
+	@rm -rf /Users/mkarim/Desktop/inception_volumes
+	@if [ -z "$$(docker ps -qa)" ]; then \
+		echo "\033[1m\033[31mNO CONTAINERS TO REMOVE\033[1m"; \
+	else \
+		docker rmi -f $$(docker ps -qa); \
+		echo "\033[1m\033[32mAll Containers removed Successfully!"; \
+	fi
+	@if [ -z "$$(docker images -q)" ]; then \
+		echo "\033[1m\033[31mNO IMAGES TO REMOVE\033[1m"; \
+	else \
+		docker rmi -f $$(docker images -qa); \
+		echo "\033[1m\033[32mAll Images removed Successfully!"; \
+	fi
+
+
+re: down clean up
+
+prune:
+	@docker system prune --all --force
+	@echo "\033[1m\033[31mCACHE REMOVED\033[1m"
