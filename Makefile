@@ -23,11 +23,11 @@ down:
 	@echo "\033[1m\033[31mAll Containers Downed Successfully!"
 
 clean:
-	@rm -rf /home/skeet/Desktop/inception_volumes
+	@sudo rm -rf /home/skeet/Desktop/inception_volumes
 	@if [ -z "$$(docker ps -qa)" ]; then \
 		echo "\033[1m\033[31mNO CONTAINERS TO REMOVE\033[1m"; \
 	else \
-		docker rmi -f $$(docker ps -qa); \
+		docker rm -f $$(docker ps -qa); \
 		echo "\033[1m\033[32mAll Containers removed Successfully!"; \
 	fi
 	@if [ -z "$$(docker images -q)" ]; then \
