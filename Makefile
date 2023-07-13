@@ -6,7 +6,7 @@
 #    By: mkarim <mkarim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/09 06:40:10 by mkarim            #+#    #+#              #
-#    Updated: 2023/07/13 13:18:04 by mkarim           ###   ########.fr        #
+#    Updated: 2023/07/13 15:41:39 by mkarim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ clean:
 	@if [ -z "$$(docker ps -qa)" ]; then \
 		echo "\033[1m\033[31mNO CONTAINERS TO REMOVE\033[1m"; \
 	else \
-		docker rmi -f $$(docker ps -qa); \
+		docker rm -f $$(docker ps -qa); \
 		echo "\033[1m\033[32mAll Containers removed Successfully!"; \
 	fi
 	@if [ -z "$$(docker images -q)" ]; then \
