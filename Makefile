@@ -6,7 +6,7 @@
 #    By: mkarim <mkarim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/09 06:40:10 by mkarim            #+#    #+#              #
-#    Updated: 2023/07/13 15:41:39 by mkarim           ###   ########.fr        #
+#    Updated: 2023/07/13 15:47:51 by mkarim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,6 @@ clean:
 		docker rmi -f $$(docker images -qa); \
 		echo "\033[1m\033[32mAll Images removed Successfully!"; \
 	fi
-
 
 re: down clean up
 
