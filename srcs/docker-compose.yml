@@ -12,8 +12,8 @@ services:
       - 443:443
     volumes:
       - wordpress_vol:/var/www/html/
-    # networks:
-    #   - np
+    networks:
+      - inception_network
     
   mariadb:
     container_name: mariadb
@@ -26,8 +26,8 @@ services:
       - 3306
     volumes:
         - mariadb_vol:/var/lib/mysql/
-    # networks:
-    #     - np
+    networks:
+      - inception_network
 
   wordpress:
     container_name: wordpress
@@ -42,6 +42,8 @@ services:
       - 9000
     volumes:
         - wordpress_vol:/var/www/html
+    networks:
+      - inception_network
 
   static_website:
     container_name: static_website
@@ -49,8 +51,8 @@ services:
     image: static_website_image
     ports:
       - 8080:8080
-
-
+    networks:
+      - inception_network
 
 
 volumes:
@@ -58,13 +60,13 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /Users/mkarim/Desktop/inception_volumes/wordpress_vol
+      device: /home/skeet/Desktop/inception_volumes/wordpress_vol
   mariadb_vol:
     driver_opts:
       type: none
       o: bind
-      device: /Users/mkarim/Desktop/inception_volumes/mariadb_vol
+      device: /home/skeet/Desktop/inception_volumes/mariadb_vol
 
-# networks:
-#   np: 
-#     driver: bridge
+networks:
+  inception_network: 
+    driver: bridge
