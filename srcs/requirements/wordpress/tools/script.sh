@@ -26,24 +26,25 @@ cd /var/www/html/
 # install and configure wordpress
 wp core download --allow-root
 
+# edit on name of wp-config
 mv /var/www/html/wp-config-sample.php /var/www/html/wp-config.php
 
+# default socket file path is replaced with the port 9000 because the fastcgi_pass directive in the mginx conf_file is set to use port 9000 to communicate with the PHP-FPM server.
 sed -i '36 s/\/run\/php\/php7.3-fpm.sock/9000/' /etc/php/7.3/fpm/pool.d/www.conf
 
-Set The Database that will be connected with wordpress
+# set the database
 sed -i 's/database_name_here/'$MYSQL_DATABASE'/g' /var/www/html/wp-config.php
 
-# Set the Username of The database
+# set the username
 sed -i 's/username_here/'$MYSQL_USER'/g' /var/www/html/wp-config.php
 
-# Set the Password
+# set the pass of the user
 sed -i 's/password_here/'$MYSQL_PASSWORD'/g' /var/www/html/wp-config.php
 
-# set The Hostname of the That base
-# sed -i 's/localhost/'$HOST'/g' /var/www/html/wp-config.php
+# set The hostname of the That base
 sed -i "s/define( 'DB_HOST', 'localhost' );/define( 'DB_HOST', '$HOST' );/g" /var/www/html/wp-config.php
 
-
+# only owner who has the read and write permissions for config
 chmod 600 wp-config.php
 
 wp core install --url=$URL \
