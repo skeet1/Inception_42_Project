@@ -59,12 +59,12 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /Users/mkarim/Desktop/inception_volumes/wordpress_vol
+      device: /home/skeet/Desktop/inception_volumes/wordpress_vol
   mariadb_vol:
     driver_opts:
       type: none
       o: bind
-      device: /Users/mkarim/Desktop/inception_volumes/mariadb_vol
+      device: /home/skeet/Desktop/inception_volumes/mariadb_vol
 
 networks:
   inception_network: 
