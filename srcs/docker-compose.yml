@@ -56,15 +56,17 @@ services:
 
 volumes:
   wordpress_vol:
+    driver: local
     driver_opts:
       type: none
       o: bind
-      device: /Users/mkarim/Desktop/inception_volumes/wordpress_vol
+      device: /Users/mkarim/Desktop/data/wordpress_vol
   mariadb_vol:
+    driver: local
     driver_opts:
       type: none
       o: bind
-      device: /Users/mkarim/Desktop/inception_volumes/mariadb_vol
+      device: /Users/mkarim/Desktop/data/mariadb_vol
 
 networks:
   inception_network: 

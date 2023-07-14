@@ -6,15 +6,15 @@
 #    By: mkarim <mkarim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/09 06:40:10 by mkarim            #+#    #+#              #
-#    Updated: 2023/07/13 15:47:51 by mkarim           ###   ########.fr        #
+#    Updated: 2023/07/14 08:24:31 by mkarim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 up:
-	@mkdir -p /Users/mkarim/Desktop/inception_volumes
-	@mkdir -p /Users/mkarim/Desktop/inception_volumes/mariadb_vol
-	@mkdir -p /Users/mkarim/Desktop/inception_volumes/wordpress_vol
+	@mkdir -p /Users/mkarim/Desktop/data
+	@mkdir -p /Users/mkarim/Desktop/data/mariadb_vol
+	@mkdir -p /Users/mkarim/Desktop/data/wordpress_vol
 	@docker-compose -f ./srcs/docker-compose.yml up --build -d
 	@echo "\033[1m\033[32mAll Containers Builded Successfully!"
 
@@ -23,7 +23,7 @@ down:
 	@echo "\033[1m\033[31mAll Containers Downed Successfully!"
 
 clean:
-	@rm -rf /Users/mkarim/Desktop/inception_volumes
+	@rm -rf /Users/mkarim/Desktop/data
 	@if [ -z "$$(docker ps -qa)" ]; then \
 		echo "\033[1m\033[31mNO CONTAINERS TO REMOVE\033[1m"; \
 	else \
