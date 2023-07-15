@@ -20,22 +20,11 @@ up:
 
 down:
 	@docker-compose -f ./srcs/docker-compose.yml down -v
+	@docker volume prune
 	@echo "\033[1m\033[31mAll Containers Downed Successfully!"
 
-clean:
-	@rm -rf /home/skeet/Desktop/data
-	# @if [ -z "$$(docker ps -qa)" ]; then \
-	# 	echo "\033[1m\033[31mNO CONTAINERS TO REMOVE\033[1m"; \
-	# else \
-	# 	docker rm -f $$(docker ps -qa); \
-	# 	echo "\033[1m\033[32mAll Containers removed Successfully!"; \
-	# fi
-	# @if [ -z "$$(docker images -q)" ]; then \
-	# 	echo "\033[1m\033[31mNO IMAGES TO REMOVE\033[1m"; \
-	# else \
-	# 	docker rmi -f $$(docker images -qa); \
-	# 	echo "\033[1m\033[32mAll Images removed Successfully!"; \
-	# fi
+clean: 	down
+	@sudo rm -rf /home/skeet/Desktop/data
 
 re: down clean up
 
